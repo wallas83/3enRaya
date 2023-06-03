@@ -17,6 +17,7 @@ function App() {
     // console.log(turnFromStorage);
     return turnFromStorage ?? TURNS.X ;
   });
+
   const [winner, setWinner] = useState(null);
 
   const resetGame = () => {
@@ -29,10 +30,12 @@ function App() {
   
   const updateBoard = (index) => {
     //no actualizamos estapocision si ya hay algo 
+    // console.log(index);
     if(board[index] || winner) return
     // actualizar el tablero
+    console.log(...board);
     const newBoard = [...board];
-    // console.log(newBoard);
+     console.log(newBoard);
     newBoard[index] = turn;
     setBoard(newBoard);
     // cambiar de turno
@@ -62,7 +65,9 @@ function App() {
       <section className='game'>
         {
           board.map((square1, index) => {
+            // console.log(square1);
             return (
+             
               <Square key={index} 
               index={index}
               updateBoardy={updateBoard}
@@ -75,6 +80,10 @@ function App() {
       <section className='turn'>
         <Square isSelected ={turn === TURNS.X}>{TURNS.X}</Square>
         <Square isSelected = {turn === TURNS.O}>{TURNS.O}</Square>
+      </section>
+      <section className='turnito'>
+        <Square isSelected ={turn === TURNS.X}>Jug.1</Square>
+        <Square isSelected = {turn === TURNS.O}>jug.2</Square>
       </section>
 
       <WinnerModal resetGame={resetGame} winner={winner} />

@@ -73,6 +73,16 @@ body {
   border-radius: 10px;
 }
 
+.turnito {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 15px auto;
+  
+  position: relative;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
 .turn .square,
 .winner .square {
   width: 70px;
@@ -89,8 +99,8 @@ body {
 .winner {
   position: absolute;
   width: 100vw;
-  height: 30vh;
-  top: 1;
+  height: 100vh;
+  top: 0;
   left: 0;
   display: grid;
   place-items: center;
@@ -120,8 +130,8 @@ body {
 }
 
 .square {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border: 2px solid #eee;
   border-radius: 5px;
   display: grid;
